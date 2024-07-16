@@ -1,0 +1,129 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<link rel="stylesheet" href="/css/filters.css" />
+<div class="row">
+  <div class="col-8 offset-2">
+    <br />
+    <h3>Create a New Listing</h3>
+    <hr />
+    <form
+      method="POST"
+      action="/listings"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label"><b>Title</b></label>
+        <input
+          name="listing[title]"
+          placeholder="Add a catchy title"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title looks good</div>
+        <div class="invalid-feedback">Please enter a valid title</div>
+        <hr />
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label"><b>Description</b></label>
+        <textarea
+          name="listing[description]"
+          placeholder="Enter description"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter a short description</div>
+        <div class="valid-feedback">Looks good!</div>
+        <hr />
+      </div>
+
+      <!-- <div class="mb-3">
+        <label for="image" class="form-label"><b>Image Link</b></label>
+        <input
+          name="listing[image]"
+          placeholder="Enter image url/link"
+          type="text"
+          class="form-control"
+        /> -->
+      <div class="mb-3">
+        <label for="image" class="form-label"
+          ><b>Upload Listing Image</b></label
+        >
+        <input
+          name="listing[image]"
+          type="file"
+          class="form-control"
+          required
+        />
+        <!-- <div class="invalid-feedback">Please add image url</div>
+        <div class="valid-feedback">Looks good!</div> -->
+        <hr />
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-4">
+          <label for="price" class="form-label"><b>Price</b></label>
+          <input
+            name="listing[price]"
+            placeholder="1200"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Price should be valid</div>
+          <div class="valid-feedback">Looks good!</div>
+          <hr />
+        </div>
+
+        <div class="mb-3 col-4">
+          <label for="country" class="form-label"><b>Country</b></label>
+          <input
+            name="listing[country]"
+            placeholder="India"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Country name should be valid</div>
+          <div class="valid-feedback">Looks good!</div>
+          <hr />
+        </div>
+        
+        <!-- <div class="mb-3 col-4">
+          <label for="category" class="form-label">Category:</label>
+          <select name="category" id="category">
+            <option value="" disabled selected>Select a category</option>
+            <option value="Trending">Trending</option>
+            <option value="Rooms">Rooms</option>
+            <option value="Iconic Cities">Iconic Cities</option>
+            <option value="Mountain">Mountain</option>
+            <option value="Castle">Castle</option>
+            <option value="Pool">Pool</option>
+            <option value="Farm">Farm</option>
+            <option value="Camping">Camping</option>
+            <option value="Arctic">Arctic</option>
+          </select>
+          <div class="invalid-feedback">Category should be valid</div>
+          <div class="valid-feedback">Looks good!</div>
+        </div> -->
+
+        <div class="mb-3 col-4">
+          <label for="location" class="form-label"><b>Location</b></label>
+          <input
+            name="listing[location]"
+            placeholder="Bengaluru, Karnataka"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Location should be valid</div>
+          <div class="valid-feedback">Looks good!</div>
+          <hr />
+        </div>
+      </div>
+      <button class="btn btn-dark add-btn">Add</button>
+      <br /><br />
+    </form>
+  </div>
+</div>
